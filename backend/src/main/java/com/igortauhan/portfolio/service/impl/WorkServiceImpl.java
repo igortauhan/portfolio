@@ -17,11 +17,11 @@ import java.util.stream.Collectors;
 public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     private final WorkRepository workRepository;
-    private final SkillServiceImpl skillServiceImpl;
+    private final SkillServiceImpl skillService;
 
-    public WorkServiceImpl(WorkRepository workRepository, SkillServiceImpl skillServiceImpl) {
+    public WorkServiceImpl(WorkRepository workRepository, SkillServiceImpl skillService) {
         this.workRepository = workRepository;
-        this.skillServiceImpl = skillServiceImpl;
+        this.skillService = skillService;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     private Set<SkillDTO> skillToDto(Set<Skill> skills) {
         return skills.stream()
-                .map(skillServiceImpl::toDto)
+                .map(skillService::toDto)
                 .collect(Collectors.toSet());
     }
 }
