@@ -14,14 +14,14 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class WorkService implements GenericService<WorkDTO, Work> {
+public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     private final WorkRepository workRepository;
-    private final SkillService skillService;
+    private final SkillServiceImpl skillServiceImpl;
 
-    public WorkService(WorkRepository workRepository, SkillService skillService) {
+    public WorkServiceImpl(WorkRepository workRepository, SkillServiceImpl skillServiceImpl) {
         this.workRepository = workRepository;
-        this.skillService = skillService;
+        this.skillServiceImpl = skillServiceImpl;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class WorkService implements GenericService<WorkDTO, Work> {
 
     private Set<SkillDTO> skillToDto(Set<Skill> skills) {
         return skills.stream()
-                .map(skillService::toDto)
+                .map(skillServiceImpl::toDto)
                 .collect(Collectors.toSet());
     }
 }

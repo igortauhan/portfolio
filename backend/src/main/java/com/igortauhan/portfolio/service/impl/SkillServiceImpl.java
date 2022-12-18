@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SkillService implements GenericService<SkillDTO, Skill> {
+public class SkillServiceImpl implements GenericService<SkillDTO, Skill> {
 
     private final SkillRepository skillRepository;
 
-    public SkillService(SkillRepository skillRepository) {
+    public SkillServiceImpl(SkillRepository skillRepository) {
         this.skillRepository = skillRepository;
     }
 

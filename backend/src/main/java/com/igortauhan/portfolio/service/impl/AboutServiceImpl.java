@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AboutService implements GenericService<AboutDTO, About> {
+public class AboutServiceImpl implements GenericService<AboutDTO, About> {
 
     private final AboutRepository aboutRepository;
 
-    public AboutService(AboutRepository aboutRepository) {
+    public AboutServiceImpl(AboutRepository aboutRepository) {
         this.aboutRepository = aboutRepository;
     }
 

@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SocialService implements GenericService<SocialDTO, Social> {
+public class SocialServiceImpl implements GenericService<SocialDTO, Social> {
 
     private final SocialRepository socialRepository;
 
-    public SocialService(SocialRepository socialRepository) {
+    public SocialServiceImpl(SocialRepository socialRepository) {
         this.socialRepository = socialRepository;
     }
 
