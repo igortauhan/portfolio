@@ -9,6 +9,7 @@ import com.igortauhan.portfolio.service.GenericService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -25,12 +26,19 @@ public class WorkService implements GenericService<WorkDTO, Work> {
 
     @Override
     public List<WorkDTO> findAll() {
-        return null;
+        List<Work> works = workRepository.findAll();
+        return works.stream().map(this::toDto).toList();
     }
 
     @Override
     public WorkDTO findById(Long id) {
-        return null;
+        Optional<Work> work = workRepository.findById(id);
+
+        if (work.isEmpty()) {
+            throw new RuntimeException("Not found!");
+        }
+
+        return toDto(work.get());
     }
 
     @Override
