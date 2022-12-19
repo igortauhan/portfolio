@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/portfolio")
+@RequestMapping(value = "/portfolios")
 public class PortfolioController {
 
     private final PortfolioService portfolioService;
