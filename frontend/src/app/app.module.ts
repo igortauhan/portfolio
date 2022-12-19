@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './component/about/about.component';
+import { HomeComponent } from './page/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AboutComponent],
+  declarations: [AppComponent, NavbarComponent, AboutComponent, HomeComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
