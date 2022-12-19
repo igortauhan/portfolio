@@ -28,6 +28,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.cors().configurationSource(corsConfigurationSource());
+        httpSecurity.httpBasic().disable();
         httpSecurity.authorizeHttpRequests((requests) -> requests.requestMatchers(PUBLIC_ENDPOINTS_GET)
                 .permitAll()
                 .anyRequest()
