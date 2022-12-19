@@ -1,6 +1,7 @@
 package com.igortauhan.portfolio.service.impl;
 
 import com.igortauhan.portfolio.dto.SocialDTO;
+import com.igortauhan.portfolio.exception.exceptions.ObjectNotFoundException;
 import com.igortauhan.portfolio.model.Social;
 import com.igortauhan.portfolio.repository.SocialRepository;
 import com.igortauhan.portfolio.service.GenericService;
@@ -26,13 +27,9 @@ public class SocialServiceImpl implements GenericService<SocialDTO, Social> {
 
     @Override
     public SocialDTO findById(Long id) {
-        Optional<Social> social = socialRepository.findById(id);
-
-        if (social.isEmpty()) {
-            throw new RuntimeException("Not found!");
-        }
-
-        return toDto(social.get());
+        return toDto(socialRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("Social not found. Id: " + id)
+        ));
     }
 
     @Override

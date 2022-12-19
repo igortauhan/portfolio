@@ -2,6 +2,7 @@ package com.igortauhan.portfolio.service.impl;
 
 import com.igortauhan.portfolio.dto.SkillDTO;
 import com.igortauhan.portfolio.dto.WorkDTO;
+import com.igortauhan.portfolio.exception.exceptions.ObjectNotFoundException;
 import com.igortauhan.portfolio.model.Skill;
 import com.igortauhan.portfolio.model.Work;
 import com.igortauhan.portfolio.repository.WorkRepository;
@@ -17,11 +18,11 @@ import java.util.stream.Collectors;
 public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     private final WorkRepository workRepository;
-    private final SkillServiceImpl skillService;
+    private final SkillServiceImpl skillServiceImpl;
 
-    public WorkServiceImpl(WorkRepository workRepository, SkillServiceImpl skillService) {
+    public WorkServiceImpl(WorkRepository workRepository, SkillServiceImpl skillServiceImpl) {
         this.workRepository = workRepository;
-        this.skillService = skillService;
+        this.skillServiceImpl = skillServiceImpl;
     }
 
     @Override
@@ -32,13 +33,9 @@ public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     @Override
     public WorkDTO findById(Long id) {
-        Optional<Work> work = workRepository.findById(id);
-
-        if (work.isEmpty()) {
-            throw new RuntimeException("Not found!");
-        }
-
-        return toDto(work.get());
+        return toDto(workRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("Work not found. Id: " + id)
+        ));
     }
 
     @Override
@@ -53,7 +50,7 @@ public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
 
     private Set<SkillDTO> skillToDto(Set<Skill> skills) {
         return skills.stream()
-                .map(skillService::toDto)
+                .map(skillServiceImpl::toDto)
                 .collect(Collectors.toSet());
     }
 }

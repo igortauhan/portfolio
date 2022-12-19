@@ -1,6 +1,7 @@
 package com.igortauhan.portfolio.service.impl;
 
 import com.igortauhan.portfolio.dto.AboutDTO;
+import com.igortauhan.portfolio.exception.exceptions.ObjectNotFoundException;
 import com.igortauhan.portfolio.model.About;
 import com.igortauhan.portfolio.repository.AboutRepository;
 import com.igortauhan.portfolio.service.GenericService;
@@ -26,13 +27,9 @@ public class AboutServiceImpl implements GenericService<AboutDTO, About> {
 
     @Override
     public AboutDTO findById(Long id) {
-        Optional<About> about = aboutRepository.findById(id);
-
-        if (about.isEmpty()) {
-            throw new RuntimeException("Not found!");
-        }
-
-        return toDto(about.get());
+        return toDto(aboutRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("About not found. Id: " + id)
+        ));
     }
 
     @Override

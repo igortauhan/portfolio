@@ -1,6 +1,7 @@
 package com.igortauhan.portfolio.service.impl;
 
 import com.igortauhan.portfolio.dto.SkillDTO;
+import com.igortauhan.portfolio.exception.exceptions.ObjectNotFoundException;
 import com.igortauhan.portfolio.model.Skill;
 import com.igortauhan.portfolio.repository.SkillRepository;
 import com.igortauhan.portfolio.service.GenericService;
@@ -26,13 +27,9 @@ public class SkillServiceImpl implements GenericService<SkillDTO, Skill> {
 
     @Override
     public SkillDTO findById(Long id) {
-        Optional<Skill> skill = skillRepository.findById(id);
-
-        if (skill.isEmpty()) {
-            throw new RuntimeException("Not found!");
-        }
-
-        return toDto(skill.get());
+        return toDto(skillRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("Skill not found. Id: " + id)
+        ));
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.igortauhan.portfolio.service.impl;
 
 import com.igortauhan.portfolio.dto.ArticleDTO;
+import com.igortauhan.portfolio.exception.exceptions.ObjectNotFoundException;
 import com.igortauhan.portfolio.model.Article;
 import com.igortauhan.portfolio.repository.ArticleRepository;
 import com.igortauhan.portfolio.service.GenericService;
@@ -26,13 +27,9 @@ public class ArticleServiceImpl implements GenericService<ArticleDTO, Article> {
 
     @Override
     public ArticleDTO findById(Long id) {
-        Optional<Article> article = articleRepository.findById(id);
-
-        if (article.isEmpty()) {
-            throw new RuntimeException("Not found!");
-        }
-
-        return toDto(article.get());
+        return toDto(articleRepository.findById(id).orElseThrow(
+                () -> new ObjectNotFoundException("Article not found. Id: " + id)
+        ));
     }
 
     @Override
