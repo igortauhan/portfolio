@@ -1,3 +1,5 @@
-<app-about [about]="portfolio?.about"></app-about>
-<app-skill [skills]="portfolio?.skills"></app-skill>
-<app-work [works]="portfolio?.works"></app-work>
+<div [ngClass]="'homepage'">
+  <app-about [about]="portfolio?.about"></app-about>
+  <app-skill [skills]="portfolio?.skills"></app-skill>
+  <app-work [works]="portfolio?.works"></app-work>
+</div>
