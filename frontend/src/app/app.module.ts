@@ -9,9 +9,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './component/about/about.component';
 import { HomeComponent } from './page/home/home.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { SkillComponent } from './component/skill/skill.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AboutComponent, HomeComponent, FooterComponent],
+  declarations: [AppComponent, NavbarComponent, AboutComponent, HomeComponent, FooterComponent, SkillComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],

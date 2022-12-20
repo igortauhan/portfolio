@@ -1,0 +1,10 @@
+<section>
+  <h5>Skills</h5>
+  <div [ngClass]="'row'">
+    <span *ngFor="let skill of skills" [ngClass]="'col-3'">
+      <p [ngClass]="'badge badge-pill bg-success'">
+        {{ skill.name }}
+      </p>
+    </span>
+  </div>
+</section>
