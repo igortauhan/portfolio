@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <a class="navbar-brand text-warning" href="#">@igortauhan</a>
   <button
+    (click)="toggleCollapsed()"
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
@@ -12,7 +13,11 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div
+    [ngbCollapse]="isCollapsed"
+    class="collapse navbar-collapse"
+    id="navbarSupportedContent"
+  >
     <ul class="navbar-nav ms-auto">
       <li class="nav-item">
         <a class="nav-link text-warning" href="#portfolio">Portfolio</a>
