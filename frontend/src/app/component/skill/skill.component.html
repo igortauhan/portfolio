@@ -3,7 +3,7 @@
   <div [ngClass]="'row'">
     <span *ngFor="let skill of skills" [ngClass]="'col-3'">
       <p [ngClass]="'badge badge-pill bg-success'">
-        {{ skill.name }}
+        {{ skill?.name }}
       </p>
     </span>
   </div>

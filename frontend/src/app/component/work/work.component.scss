@@ -1,0 +1,16 @@
+$default-gray: #5c5360;
+
+.work {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $default-gray;
+}
+
+.description-skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-skills span p {
+  border-radius: 1em;
+}

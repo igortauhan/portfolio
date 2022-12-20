@@ -1,0 +1,20 @@
+<section>
+  <div *ngFor="let work of works" [ngClass]="'work'">
+    <div [ngClass]="'metadata'">
+      <p>Empresa:</p>
+      <h6>{{ work?.companyName }}</h6>
+      <p>Desde:</p>
+      <h6>{{ work?.since }}</h6>
+    </div>
+    <div [ngClass]="'description'">
+      <div [ngClass]="'description-skills'">
+        <p>Skills utilizadas:</p>
+        <span *ngFor="let skill of work?.skills">
+          <p [ngClass]="'badge badge-pill bg-success'">
+            {{ skill?.name }}
+          </p>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
