@@ -1,0 +1,10 @@
+<section [ngClass]="'mt-3'">
+  <h5 [ngClass]="'text-success'">Artigos</h5>
+  <div *ngFor="let article of articles" [ngClass]="'article p-2'">
+    <h6>{{ article?.title }}</h6>
+    <small [ngClass]="'text-muted'">{{ article?.tags }}</small>
+    <p>
+      <a href="{{ article?.link }}">Ler artigo</a>
+    </p>
+  </div>
+</section>
