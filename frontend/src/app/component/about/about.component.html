@@ -1,5 +1,15 @@
 <section [ngClass]="'mt-3'">
-  <h4 [ngClass]="'text-success'">{{ about?.name }}</h4>
-  <p>{{ about?.role }}</p>
-  <p>{{ about?.description }}</p>
+  <div [ngClass]="'about-principal'">
+    <div>
+      <h4 [ngClass]="'text-success'">{{ about?.name }}</h4>
+      <p>{{ about?.role }}</p>
+    </div>
+    <div [ngClass]="'ms-auto'">
+      <img src="https://github.com/igortauhan.png" />
+    </div>
+  </div>
+  <div>
+    <h5 [ngClass]="'text-success'">Sobre mim</h5>
+    <p>{{ about?.description }}</p>
+  </div>
 </section>
