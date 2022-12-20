@@ -1,0 +1,30 @@
+$default-gray: #5c5360;
+
+.work {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $default-gray;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    border: 0px;
+    border-bottom: 1px solid $default-gray;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    border-left: 1px solid $default-gray;
+  }
+}
+
+.description-skills {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-skills span p {
+  border-radius: 1em;
+}
