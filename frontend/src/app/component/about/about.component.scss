@@ -1,0 +1,12 @@
+$default-gray: #5c5360;
+
+.about-principal {
+  display: flex;
+}
+
+img {
+  max-width: 80px;
+  max-height: 80px;
+  border: 2px solid $default-gray;
+  border-radius: 50%;
+}

@@ -2,8 +2,8 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-p {
-  border-radius: 1em;
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+  }
 }

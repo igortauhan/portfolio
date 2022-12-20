@@ -1,5 +1,5 @@
-<section>
-  <h5>Skills</h5>
+<section [ngClass]="'mt-3'">
+  <h5 [ngClass]="'text-success'">Skills</h5>
   <div [ngClass]="'row'">
     <span *ngFor="let skill of skills" [ngClass]="'col-3'">
       <p [ngClass]="'badge badge-pill bg-success'">

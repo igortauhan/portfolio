@@ -1,16 +1,16 @@
-<section>
-  <h5>Portfolio</h5>
+<section [id]="'portfolio'" [ngClass]="'mt-3'">
+  <h5 [ngClass]="'text-success'">Experiência profissional</h5>
   <div *ngFor="let work of works" [ngClass]="'work'">
     <div [ngClass]="'metadata mx-2 p-2'">
-      <p [ngClass]="'font-weight-bold'">Empresa:</p>
-      <h6>{{ work?.companyName }}</h6>
-      <p [ngClass]="'font-weight-bold'">Desde:</p>
-      <h6>{{ work?.since }}</h6>
+      <small [ngClass]="'font-weight-bold'">Empresa:</small>
+      <h6 [ngClass]="'text-success'">{{ work?.companyName }}</h6>
+      <small [ngClass]="'font-weight-bold mt-3'">Desde:</small>
+      <h6 [ngClass]="'text-success'">{{ work?.since }}</h6>
     </div>
     <div [ngClass]="'description mx-2 p-2'">
       <div [ngClass]="'description-skills'">
-        <p [ngClass]="'font-weight-bold'">Skills utilizadas:</p>
-        <span *ngFor="let skill of work?.skills">
+        <strong [ngClass]="'font-weight-bold'">Skills utilizadas:</strong>
+        <span *ngFor="let skill of work?.skills" [ngClass]="'mx-1'">
           <p [ngClass]="'badge badge-pill bg-success'">
             {{ skill?.name }}
           </p>
@@ -18,10 +18,7 @@
       </div>
       <div [ngClass]="'description-text'">
         <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta amet
-          voluptate nam consequuntur quas, animi eveniet quibusdam molestiae
-          nemo labore, a reiciendis omnis pariatur autem ipsam consectetur dolor
-          non officia.
+          {{ work?.description }}
         </p>
       </div>
     </div>
