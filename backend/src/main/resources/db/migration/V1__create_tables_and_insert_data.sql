@@ -66,7 +66,7 @@ insert into tb_skill(id, name, since) VALUES (1,
                                               '2020-01-01');
 
 insert into tb_skill(id, name, since) VALUES (2,
-                                              'Spring',
+                                              'Spring Boot',
                                               '2021-01-01');
 
 insert into tb_skill(id, name, since) VALUES (3,
@@ -85,6 +85,18 @@ insert into tb_skill(id, name, since) VALUES (6,
                                               'C#',
                                               '2020-01-01');
 
+insert into tb_skill(id, name, since) VALUES (7,
+                                              'MongoDB',
+                                              '2021-01-01');
+
+insert into tb_skill(id, name, since) VALUES (8,
+                                              'Postgres',
+                                              '2021-01-01');
+
+insert into tb_skill(id, name, since) VALUES (9,
+                                              'MySQL',
+                                              '2021-01-01');
+
 -- Socials
 insert into tb_social(id, link, name) VALUES (1,
                                               'https://github.com/igortauhan',
@@ -101,7 +113,6 @@ insert into tb_work(id, since, company_name, description) VALUES (1,
                                                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry.');
 
 -- Relations
-insert into tb_work_skill(work_id, skill_id) VALUES (1, 1);
 insert into tb_work_skill(work_id, skill_id) VALUES (1, 2);
-insert into tb_work_skill(work_id, skill_id) VALUES (1, 4);
 insert into tb_work_skill(work_id, skill_id) VALUES (1, 5);
+insert into tb_work_skill(work_id, skill_id) VALUES (1, 7);
