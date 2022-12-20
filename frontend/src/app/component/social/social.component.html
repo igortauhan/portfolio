@@ -2,7 +2,7 @@
   <h5 [ngClass]="'text-success'">Redes sociais</h5>
   <div [ngClass]="'py-2'">
     <div *ngFor="let social of socials" [ngClass]="'px-2'">
-      <a href="{{ social?.link }}" target="_blank">
+      <a [ngClass]="'text-light'" href="{{ social?.link }}" target="_blank">
         <i [ngClass]="getClassName(social?.name)"></i>
         {{ social?.name }}
       </a>

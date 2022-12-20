@@ -97,6 +97,10 @@ insert into tb_skill(id, name, since) VALUES (9,
                                               'MySQL',
                                               '2021-01-01');
 
+insert into tb_skill(id, name, since) VALUES (10,
+                                              'Bootstrap',
+                                              '2021-01-01');
+
 -- Socials
 insert into tb_social(id, link, name) VALUES (1,
                                               'https://github.com/igortauhan',
