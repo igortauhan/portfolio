@@ -1,5 +1,5 @@
 <section>
-  <h5>Portfolio</h5>
+  <h5>Experiência profissional</h5>
   <div *ngFor="let work of works" [ngClass]="'work'">
     <div [ngClass]="'metadata mx-2 p-2'">
       <p [ngClass]="'font-weight-bold'">Empresa:</p>
@@ -10,7 +10,7 @@
     <div [ngClass]="'description mx-2 p-2'">
       <div [ngClass]="'description-skills'">
         <p [ngClass]="'font-weight-bold'">Skills utilizadas:</p>
-        <span *ngFor="let skill of work?.skills">
+        <span *ngFor="let skill of work?.skills" [ngClass]="'mx-1'">
           <p [ngClass]="'badge badge-pill bg-success'">
             {{ skill?.name }}
           </p>
