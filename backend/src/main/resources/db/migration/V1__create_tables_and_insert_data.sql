@@ -103,7 +103,7 @@ insert into tb_social(id, link, name) VALUES (1,
                                               'Github');
 
 insert into tb_social(id, link, name) VALUES (2,
-                                              'www.linkedin.com/in/igortauhan',
+                                              'https://linkedin.com/in/igortauhan',
                                               'Linkedin');
 
 -- Works
