@@ -12,15 +12,12 @@ $default-gray: #5c5360;
   }
 }
 
-.metadata {
-  @media (min-width: 768px) {
-    border-right: 1px solid $default-gray;
-  }
-}
-
 .description {
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    border-left: 1px solid $default-gray;
+  }
 }
 
 .description-skills {
