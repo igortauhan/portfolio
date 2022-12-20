@@ -11,9 +11,10 @@ import { HomeComponent } from './page/home/home.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { SkillComponent } from './component/skill/skill.component';
 import { WorkComponent } from './component/work/work.component';
+import { SocialComponent } from './component/social/social.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AboutComponent, HomeComponent, FooterComponent, SkillComponent, WorkComponent],
+  declarations: [AppComponent, NavbarComponent, AboutComponent, HomeComponent, FooterComponent, SkillComponent, WorkComponent, SocialComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
