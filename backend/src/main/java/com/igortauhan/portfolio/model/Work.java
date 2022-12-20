@@ -18,6 +18,7 @@ public class Work implements Serializable {
     private Long id;
     private String companyName;
     private LocalDateTime Since;
+    private String description;
 
     @ManyToMany
     @JoinTable(
@@ -29,10 +30,11 @@ public class Work implements Serializable {
 
     public Work() {}
 
-    public Work(Long id, String companyName, LocalDateTime since) {
+    public Work(Long id, String companyName, LocalDateTime since, String description) {
         this.id = id;
         this.companyName = companyName;
         Since = since;
+        this.description = description;
     }
 
     public Long getId() {
@@ -57,6 +59,14 @@ public class Work implements Serializable {
 
     public void setSince(LocalDateTime since) {
         Since = since;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<Skill> getSkills() {

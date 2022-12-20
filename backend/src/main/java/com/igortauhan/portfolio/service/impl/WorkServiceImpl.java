@@ -44,6 +44,7 @@ public class WorkServiceImpl implements GenericService<WorkDTO, Work> {
                 work.getId(),
                 work.getCompanyName(),
                 work.getSince(),
+                work.getDescription(),
                 skillToDto(work.getSkills())
         );
     }
