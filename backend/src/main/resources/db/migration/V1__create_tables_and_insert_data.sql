@@ -50,9 +50,9 @@ alter table if exists tb_work_skill add constraint FKibx2ypfikky99ch208raom9mg f
 
 -- About
 insert into tb_about(id, description, name, role) VALUES (1,
-                                                          'Desenvolvedor Fullstack que estuda programação a 3 anos. Dediquei os últimos dois anos para o desenvolvimento web com foco em Backend com Java e Spring Boot.',
+                                                          'Desenvolvedor Fullstack que estuda programação a 3 anos. Dediquei os últimos dois anos para o desenvolvimento web com foco em Backend com Java e Spring Boot. Atualmente faço uma graduação em Sistemas de Informação.',
                                                           'Igor Tauhan',
-                                                          'Desenvlvedor Fullstack');
+                                                          'Desenvolvedor Fullstack');
 
 -- Articles
 insert into tb_article(id, link, tags, title) VALUES (1,
@@ -114,7 +114,7 @@ insert into tb_social(id, link, name) VALUES (2,
 insert into tb_work(id, since, company_name, description) VALUES (1,
                                                      '2022-05-02',
                                                      'GAT InfoSec',
-                                                     'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry. Lorem Ipsum has been the industry.');
+                                                     'Na GAT InfoSec eu atuo como estagiário em desenvolvimento de Software, desenvolvendo novas integrações para a plataforma, resolvendo bugs e análisando novas implementações para integrações.');
 
 -- Relations
 insert into tb_work_skill(work_id, skill_id) VALUES (1, 2);
